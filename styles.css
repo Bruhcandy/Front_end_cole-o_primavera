@@ -1,47 +1,75 @@
 html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-.imagem1{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .cartas {
-    position: relative;
-    width: 50%; /* Ajuste o tamanho conforme necessário */
-    height: 50%; /* Ajuste o tamanho conforme necessário */
-    bottom: 10%; /* Posiciona no rodapé */
-  right: 0; /* Posiciona no canto direito */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative; /* Adicionando position: relative para a altura e largura serem baseadas no body */
+}
+
+.imagem1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cartas {
+  position: absolute;
+  width: 50%; /* Ajuste o tamanho conforme necessário */
+  height: 73.4%; /* Ajuste o tamanho conforme necessário */
+  bottom:-30%; /* Posiciona no rodapé */
+  right: -2%; /* Posiciona no canto direito */
   transform-origin: bottom right;
-  transform: rotate(70deg); /* Gira 90 graus */
-  z-index: 2;
-    
-  }
+  transform: rotate(16deg); /* Gira 90 graus */
   
-  .cartafechada,
-  .cartaaberta {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: opacity 0.5s;
-  }
-  
-  .cartaaberta {
-    opacity: 0;
-  }
-  
-  .cartas:hover .cartafechada {
-    opacity: 0;
-  }
-  
-  .cartas:hover .cartaaberta {
-    opacity: 1;
-  }
-  
+}
+
+.cartafechada,
+.cartaaberta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s;
+}
+
+.cartaaberta {
+  opacity: 0;
+}
+
+.cartas:hover .cartafechada {
+  opacity: 0;
+}
+
+.cartas:hover .cartaaberta {
+  opacity: 1;
+}
+
+/* ... (seu CSS existente) */
+
+.texto-carta{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: red;
+  font-family: 'Playball', cursive;
+  opacity: 0;
+}
+
+.texto-carta .frase {
+  text-decoration: none;
+}
+
+.texto-carta .assinatura {
+  display: block;
+  font-size: 14px;
+}
